@@ -1,0 +1,5 @@
+-- CreateTable
+CREATE TABLE "userType" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "type" TEXT NOT NULL
+);
