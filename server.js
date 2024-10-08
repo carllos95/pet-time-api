@@ -7,6 +7,7 @@ import userAuthController from './src/controllers/userAuthController.js'
 import userController from './src/controllers/userController.js'
 import userDeleteController from './src/controllers/userDeleteController.js'
 import createPetShopController from './src/controllers/createPetShopController.js'
+import { updatePetShopController } from './src/controllers/updatePetShopController.js'
 
 const app = express()
 
@@ -27,6 +28,8 @@ app.get('/authentication', userAuthController)
 app.post('/user', userController)
 
 app.post('/createPetShop', createPetShopController)
+
+app.post('/updatePetShop', updatePetShopController)
 
 
 app.listen(PORT, () => {

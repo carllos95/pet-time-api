@@ -51,6 +51,7 @@ model PetShop {
   name            String
   description     String
   logo            String
+  phone           String?
   cnpj            String @unique
   address         String
   address_number  String
