@@ -18,6 +18,9 @@ model Situation {
   situation String @default("ATIVO")
 
   users User[]
+  petshop PetShop[]
+
+  @@map("situation")
 }
 
 model User {
@@ -61,6 +64,8 @@ model PetShop {
   slug            String?
   user            User @relation(fields: [userId], references: [id])
   userId          String
+  situationStatus Situation? @relation(fields: [situation], references: [id])
+  situation       Int @default(1)
 
   @@map("petShop")
 }
