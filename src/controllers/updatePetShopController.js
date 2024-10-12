@@ -1,6 +1,6 @@
 import { petShopUpdateUseCase } from "../use-cases/petShopUpdateUseCase.js"
 
-export async function updatePetShopController(req, res) {
+export default async function updatePetShopController(req, res) {
   try {
     const petShopData = req.body
 
