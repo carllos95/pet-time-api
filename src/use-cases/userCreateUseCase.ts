@@ -1,8 +1,10 @@
-import { UserRepository } from "../repositories/userCreateRepository.js"
+import { UserRepository } from "../repositories/userCreateRepository"
+import { CreateUserRequestBody } from "../types/CreateUserRequestBody"
+
 
 const userRepository = new UserRepository()
 
-export async function createUseCase(userData) {
+export async function createUseCase(userData: CreateUserRequestBody) {
   if (!userData.email || !userData.password || !userData.document || !userData.phone || !userData.name) {
     throw new Error('Campos obrigatórios faltando!')
   }

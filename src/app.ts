@@ -1,5 +1,6 @@
 import express from 'express'
-// import createUserController from './src/controllers/createUserController.js'
+import createUserController from './controllers/createUserController'
+
 // import userUpdateController from './src/controllers/userUpdateController.js'
 // import userLoginController from './src/controllers/userLoginController.js'
 // import userAuthController from './src/controllers/userAuthController.js'
@@ -12,7 +13,7 @@ const app = express()
 
 app.use(express.json())
 
-// app.post('/create', createUserController)
+app.post('/create', createUserController)
 
 // app.post('/updateUser', userUpdateController)
 

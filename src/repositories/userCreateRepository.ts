@@ -1,9 +1,11 @@
+
 import { PrismaClient } from '@prisma/client'
+import { CreateUserRequestBody } from '../types/CreateUserRequestBody'
 
 const prisma = new PrismaClient()
 
 export class UserRepository {
-  async findByEmail(email) {
+  async findByEmail(email: string) {
     const userAlreadyExists = await prisma.user.findUnique({
       where: {
         email
@@ -12,7 +14,7 @@ export class UserRepository {
     return userAlreadyExists
   }
 
-  async create(userData) {
+  async create(userData: CreateUserRequestBody) {
     const newUser = await prisma.user.create({
       data: {
         name: userData.name,
