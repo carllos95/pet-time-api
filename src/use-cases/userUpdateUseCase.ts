@@ -1,8 +1,9 @@
-import { UserUpdateRepository } from "../repositories/userUpdateRepository.js";
+import { UserUpdateRepository } from "../../src/repositories/userUpdateRepository"
+import { UpdateUserRequestBody } from "../../src/types/UpdateUserRequestBody"
 
 const userUpdateRepository = new UserUpdateRepository()
 
-export async function userUpdateUseCase(userData) {
+export async function userUpdateUseCase(userData: UpdateUserRequestBody) {
   if (!userData.id) {
     throw new Error('Id do usuário deve ser enviado no corpo da requisição!')
   }
